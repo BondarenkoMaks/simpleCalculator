@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="calculatorApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator on angular</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="javascript/index.js"></script>
+</head>
+<body ng-controller="calculatorController">
+    <div class="container panel-default" >
+        <div class="row ">
+            <div class="col-xs-10  ct-expressions" ng-cloak>
+                {{ calculator.display }}
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- NUMBERS COLS -->
+            <div class="col-xs-12 ">
+               <div class="row">
+                   <div class="col-xs-1"></div>
+                   <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(7)">7</div>
+                   <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(8)">8</div>
+                   <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(9)">9</div>
+               </div>
+                <div class="row text-center">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(4)">4</div>
+                    <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(5)">5</div>
+                    <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(6)">6</div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(1)">1</div>
+                    <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(2)">2</div>
+                    <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(3)">3</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row text-center">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3 ct-keys btn btn-primary" ng-click="operationButtonClicked('(')">(</div>
+                    <div class="col-xs-3 ct-keys btn btn-primary" ng-click="numberButtonClicked(0)">0</div>
+                    <div class="col-xs-3 ct-keys btn btn-primary" ng-click="operationButtonClicked(')')">)</div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3 ct-keys ct-operators btn btn-warning" ng-click="operationButtonClicked('+')">+</div>
+                    <div class="col-xs-3 ct-keys ct-operators btn btn-warning" ng-click="operationButtonClicked('-')">-</div>
+                    <div class="col-xs-3 ct-keys ct-operators btn btn-danger"  ng-click="clearClicked()">C</div>
+ 
+                </div>
+                <div class="row text-center">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-3 ct-keys ct-operators btn btn-warning" ng-click="operationButtonClicked('/')">/</div>
+                    <div class="col-xs-3 ct-keys ct-operators btn btn-warning" ng-click="operationButtonClicked('*')">*</div>
+                    <div class="col-xs-3 ct-keys ct-operators btn btn-success" ng-click="equalClicked()">=</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
